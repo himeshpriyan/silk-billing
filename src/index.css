@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Silk Store Pro - Glass & Gold Design System */
+
+@layer base {
+  :root {
+    --background: 30 20% 98%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    /* Premium Gold */
+    --primary: 43 64% 53%; /* #D4AF37 */
+    --primary-foreground: 30 20% 98%;
+
+    /* Deep Indigo/Charcoal */
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 30 20% 98%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 43 64% 53%;
+    --accent-foreground: 220 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 43 64% 53%;
+
+    --radius: 1rem;
+
+    /* Sidebar - Glass Effect */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 30% 20%;
+    --sidebar-primary: 43 64% 53%;
+    --sidebar-primary-foreground: 30 20% 98%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 43 64% 53%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 43 64% 53%;
+
+    /* Glass Effect Props */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark {
+    --background: 220 30% 6%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 30% 10%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 30% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 43 64% 53%;
+    --primary-foreground: 220 30% 10%;
+
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 217 19% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 43 64% 53%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 217 19% 15%;
+    --input: 217 19% 15%;
+    --ring: 43 64% 53%;
+
+    --sidebar-background: 220 30% 4%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 43 64% 53%;
+    --sidebar-primary-foreground: 220 30% 10%;
+    --sidebar-accent: 220 30% 8%;
+    --sidebar-accent-foreground: 43 64% 53%;
+    --sidebar-border: 217 19% 15%;
+    --sidebar-ring: 43 64% 53%;
+
+    --glass-bg: rgba(10, 10, 15, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.05);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  /* Premium Glass Cards */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  /* Silk Pattern - Subtle Overlay */
+  .silk-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Gold Glow Effect */
+  .gold-glow {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+
+  /* Premium Buttons */
+  .premium-btn {
+    @apply transition-all duration-300 active:scale-95;
+    background: linear-gradient(135deg, hsl(43, 64%, 53%) 0%, hsl(43, 64%, 43%) 100%);
+    box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.3);
+  }
+
+  /* Modern Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full hover:bg-muted-foreground/30 transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-glass {
+    @apply text-foreground/70;
+  }
+  
+  .border-glass {
+    border-color: var(--glass-border);
+  }
+
+  .bg-silk-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  }
+
+  .text-silk-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Force white text on active sidebar links to override shadcn sidebar defaults */
+  .active-link, .active-link span {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+}
